@@ -1,0 +1,7 @@
+{
+  "name": "mcp-atlassian",
+  "displayName": "Atlassian (Confluence + Jira)",
+  "description": "Access Confluence pages, Jira issues, projects, and search across the NS Atlassian workspace",
+  "transport": "streamable-http",
+  "port": 3000
+}
