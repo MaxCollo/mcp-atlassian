@@ -1,4 +1,4 @@
-FROM ghcr.io/sooperset/mcp-atlassian:latest
+FROM ghcr.io/sooperset/mcp-atlassian:v0.21.1
 
 EXPOSE 3000
 
