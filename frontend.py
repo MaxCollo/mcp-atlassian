@@ -20,7 +20,6 @@ import sys
 import urllib.error
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from socketserver import ThreadingMixIn
 
 PORT = int(os.environ.get("PORT", "3000"))
 BACKEND_PORT = PORT + 1000
@@ -110,7 +109,9 @@ class Handler(BaseHTTPRequestHandler):
         self._proxy()
 
 
-class ThreadingServer(ThreadingMixIn, ThreadingHTTPServer):
+class ThreadingServer(ThreadingHTTPServer):
+    # ThreadingHTTPServer already includes ThreadingMixIn — we just override
+    # daemon_threads so a slow handler doesn't block process shutdown.
     daemon_threads = True
 
 
